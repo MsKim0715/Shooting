@@ -17,7 +17,7 @@ namespace Data.Stat
     [Serializable]
     public class PlayerStatData : ILoader<string, PlayerStat>
     {
-        public List<PlayerStat> stats = new List<PlayerStat>();
+        public List<PlayerStat> stats = new();
         
         public Dictionary<string, PlayerStat> MakeDic()
         {
