@@ -12,8 +12,8 @@ namespace Data.Stat
         public float attack;
         public float speed;
     }
-
-    /* 데이터를 딕셔너리 형태로 변경 */
+    
+    
     [Serializable]
     public class PlayerStatData : ILoader<string, PlayerStat>
     {

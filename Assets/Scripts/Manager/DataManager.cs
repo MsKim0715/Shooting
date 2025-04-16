@@ -1,8 +1,4 @@
-﻿
-
-
-using Controller;
-
+﻿using Controller;
 
 namespace Manager
 {
