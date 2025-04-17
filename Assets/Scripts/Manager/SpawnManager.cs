@@ -5,8 +5,6 @@ namespace Manager
     public class SpawnManager : MonoBehaviour
     {
 
-
-        
         
         GameObject GetSpawnObj<T>(T id)
         {
