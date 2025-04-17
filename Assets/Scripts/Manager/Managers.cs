@@ -1,4 +1,5 @@
-﻿using Controller;
+﻿using System;
+using Controller;
 using SingleTon;
 
 namespace Manager
@@ -31,6 +32,11 @@ namespace Manager
 
             //의존성 주입
             _dataManager.Init(new JsonLoader());
+        }
+
+        private void Update()
+        {
+            _inputManager.OnUpdate();
         }
     }
 }
