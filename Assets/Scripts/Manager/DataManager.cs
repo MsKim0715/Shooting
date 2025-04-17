@@ -1,13 +1,14 @@
 ﻿using Controller;
+using UnityEngine;
 
 namespace Manager
 {
-    public class DataManager
+    public class DataManager : MonoBehaviour
     {
-        private readonly IJsonLoader _loader;
+        private IJsonLoader _loader;
         
         /* IJsonLoader 의존성 주입 */
-        public DataManager(IJsonLoader jsonLoader)
+        public void Init(IJsonLoader jsonLoader)
         {
             _loader = jsonLoader;
         }

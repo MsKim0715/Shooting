@@ -1,8 +1,10 @@
 
 
+using UnityEngine;
+
 namespace Manager
 {
-    public class GameManager 
+    public class GameManager : MonoBehaviour
     {
 
    
