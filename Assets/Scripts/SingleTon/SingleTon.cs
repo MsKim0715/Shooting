@@ -16,7 +16,7 @@ namespace SingleTon
             {
                 if (_instance == null)
                 {
-                    _instance =  FindAnyObjectByType<T>();
+                    _instance = FindAnyObjectByType<T>();
                     if (_instance == null)
                     {
                         GameObject obj = new GameObject
@@ -26,7 +26,7 @@ namespace SingleTon
                         _instance = obj.AddComponent<T>();
                     }
                 }
-                
+
                 return _instance;
             }
         }
@@ -35,7 +35,6 @@ namespace SingleTon
         protected virtual void Awake()
         {
             InitSingleTon();
-            
         }
 
         private void InitSingleTon()
@@ -47,8 +46,5 @@ namespace SingleTon
 
             _instance = this as T;
         }
-        
-        
-
     }
 }
