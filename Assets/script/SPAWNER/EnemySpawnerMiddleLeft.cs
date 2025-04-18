@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using SPAWNER.INTERFACE;
+using UnityEngine;
 
 namespace SPAWNER
 {

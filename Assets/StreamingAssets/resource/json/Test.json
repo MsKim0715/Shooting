@@ -1,0 +1,5 @@
+{
+    "Spawn": [
+        { "Stage": 1, "Enemy": "Test" }
+    ]
+}

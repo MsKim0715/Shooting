@@ -1,6 +1,6 @@
 ﻿
 
-namespace SPAWNER
+namespace SPAWNER.INTERFACE
 {
     public interface ISpawner
     {

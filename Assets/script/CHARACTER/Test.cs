@@ -9,9 +9,8 @@ namespace CHARACTER
         private void Start()
         {
             rb = GetComponent<Rigidbody2D>();
-            Managers.InputManager.KeyAction -= OnKeyboard;
-            Managers.InputManager.KeyAction += OnKeyboard;
-
+            Managers.InputManager.UnRegisterInput(OnKeyboard);
+            Managers.InputManager.RegisterInput(OnKeyboard);
         }
 
 
@@ -28,9 +27,7 @@ namespace CHARACTER
             //대각선 이동
             if (moveDir != Vector2.zero){ rb.linearVelocity = moveDir.normalized * 3;}
             else {rb.linearVelocity = Vector2.zero;}
-
-
-
+            
         }
     }
 }

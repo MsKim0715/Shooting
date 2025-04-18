@@ -7,10 +7,10 @@ namespace DATA.STAT
     [Serializable]
     public class PlayerStat
     {
-        public string PlayerID { get; set; }
-        public float Hp { get; set; }
-        public float Attack { get; set; }
-        public float Speed { get; set; }
+        public string playerID;
+        public float hp;
+        public float attack;
+        public float speed;
     }
     
     
@@ -18,20 +18,20 @@ namespace DATA.STAT
     public class PlayerStatData : ILoader<string, PlayerStat>
     {
         public List<PlayerStat> stats = new();
-        private Dictionary<string, PlayerStat> _dic;
+        private Dictionary<string, PlayerStat> _dict;
         public Dictionary<string, PlayerStat> MakeDic()
         {
             /* 딕셔너리가 null일 떄 값 넣기 */
-            if (_dic == null)
+            if (_dict == null)
             {
-                _dic = new();
+                _dict = new();
 
                 foreach (var stat in stats)
                 {
-                    _dic.Add(stat.PlayerID, stat);
+                    _dict.Add(stat.playerID, stat);
                 }
             }
-            return _dic;
+            return _dict;
         }
         
         /* key 값으로 PlayerStat 얻어오는 메서드 */

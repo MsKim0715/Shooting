@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using MANAGER.INTERFACE;
+using UnityEngine;
 
 namespace MANAGER
 {
-    public class PoolManager : MonoBehaviour
+    public  class PoolManager : MonoBehaviour, IPoolManager
     {
-
-        public string Test(string key)
+        
+        public string Test(int key)
         {
             string test = "test : " + key;
             

@@ -1,16 +1,17 @@
 ﻿using CONTROLLER;
+using MANAGER.INTERFACE;
 using UnityEngine;
 
 namespace MANAGER
 {
-    public class DataManager : MonoBehaviour
+    public class DataManager : MonoBehaviour , IDataManager
     {
-        private IJsonLoader _loader;
+        private IDataLoader _loader;
         
         /* IJsonLoader 의존성 주입 */
-        public void Init(IJsonLoader jsonLoader)
+        public void Init(IDataLoader dataLoder)
         {
-            _loader = jsonLoader;
+            _loader = dataLoder;
         }
         
         

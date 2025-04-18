@@ -1,21 +1,25 @@
-﻿using UnityEngine;
+﻿using MANAGER.INTERFACE;
+using UnityEngine;
 
 namespace MANAGER
 {
-    public class SpawnManager : MonoBehaviour
+    public class SpawnManager : MonoBehaviour,ISpawnManager
     {
-        private PoolManager _pooler = Managers.PoolManager;
+        private IPoolManager _poolManager;
+        
+        private void Awake()
+        {
+            _poolManager = GetComponent<PoolManager>();
+        }
 
 
-
-      public  string GetTest(string key)
-      {
-          return _pooler.Test(key);
-      }
+        public  string GetTest(int key)
+        {
+            return _poolManager.Test(key);
+        }
         
         /*GameObject GetSpawnObj<T>(T id)
         {
-            //TODO
             return null;
         }*/
     }
