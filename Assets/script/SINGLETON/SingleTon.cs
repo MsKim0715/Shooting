@@ -9,5 +9,6 @@
 
             public static T Instance => SingleTonHolder._instance;
 
+            
         }
     }
