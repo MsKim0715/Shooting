@@ -1,50 +1,13 @@
-﻿using UnityEngine;
-
-namespace SINGLETON
-{
-    public class SingleTon<T> : MonoBehaviour where T : Component
+﻿    namespace singleTon
     {
-        private static T _instance;
-        public static bool HasInstance => _instance != null;
-        public static T TryGetInstance() => HasInstance ? _instance : null;
-        public static T Current => _instance;
-
-
-        public static T Instance
+        public class SingleTon<T> where T : new()
         {
-            get
+            private static class SingleTonHolder
             {
-                if (_instance == null)
-                {
-                    _instance = FindAnyObjectByType<T>();
-                    if (_instance == null)
-                    {
-                        GameObject obj = new GameObject
-                        {
-                            name = typeof(T).Name
-                        };
-                        _instance = obj.AddComponent<T>();
-                    }
-                }
-
-                return _instance;
-            }
-        }
-
-
-        protected virtual void Awake()
-        {
-            InitSingleTon();
-        }
-
-        private void InitSingleTon()
-        {
-            if (!Application.isPlaying)
-            {
-                return;
+                internal static readonly T _instance = new();
             }
 
-            _instance = this as T;
+            public static T Instance => SingleTonHolder._instance;
+
         }
     }
-}
